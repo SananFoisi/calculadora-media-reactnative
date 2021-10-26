@@ -15,9 +15,9 @@ export default class App extends Component {
     let media = (num1 + num2) / 2
 
     if (media >= 6 && this.state.faltas <= 10) {
-      this.setState({ resultado: "Aprovado" })
+      this.setState({ resultado: "APROVADO" })
     } else {
-      this.setState({ resultado: "Reprovado" })
+      this.setState({ resultado: "REPROVADO" })
     }
 
   }
@@ -25,6 +25,10 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
+
+        <Text style={styles.textCabecalho}>
+          Aprovação Alunos
+        </Text>
 
         <TextInput style={(styles.textInput)}
           onChangeText={(nota1) => { this.setState({ nota1 }) }}
@@ -58,6 +62,13 @@ const styles = StyleSheet.create({
     flex: 1 //crescer a tela conforme e adicionadao coisas
   },
 
+  textCabecalho: {
+    marginTop: 30,
+    fontSize: 30,
+    fontFamily: 'Verdana',
+    alignSelf: 'center'
+  },
+
   textInput: {
     padding: 30,
     backgroundColor: '#cccccc',
@@ -68,9 +79,12 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    margin: 20,
-    padding: 20,
+    marginTop: 30,
+    marginLeft: 50,
+    marginRight: 50,
+    padding: 30,
     backgroundColor: '#37474f',
+    
   },
 
   textButon: {
@@ -82,6 +96,7 @@ const styles = StyleSheet.create({
   },
 
   textResultado: {
+    marginTop: 30,
     color: '#000',
     fontSize: 22,
     fontWeight: 'bold',
